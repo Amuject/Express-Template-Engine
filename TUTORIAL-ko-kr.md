@@ -168,7 +168,7 @@ import express from 'express';
 const app = express();
 
 // 템플릿 엔진 모듈 가져오기
-import engine from '@wnynya/express-template-engine';
+import engine from 'express-template-engine';
 
 // 템플릿 엔진 설정하기
 app.engine('html', engine());

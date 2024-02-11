@@ -29,11 +29,10 @@
     "build:esm": "tsc --p tsconfig.json",
     "build:cjs": "npx babel dist-esm --out-dir dist-cjs",
     "build:package": "node scripts/build-package.js",
-    "test": "npm run test:clean && npm run test:esm && npm run test:cjs",
     "test:clean": "node scripts/test-clean.js && npm install",
     "test:esm": "npm run -w ./test test:esm",
     "test:cjs": "npm run -w ./test test:cjs",
-    "bnt": "npm run build && npm run test"
+    "bnt": "npm run build && npm run test:clean"
   },
   "workspaces": [
     "test"

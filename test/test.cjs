@@ -1,22 +1,19 @@
 'use strict';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const path = require('node:path');
 
-import express from 'express';
+const express = require('express');
 
 const app = express();
 
-import engine from '../../src/index.ts/index.js';
+const engine = require('express-template-engine');
 
 app.engine('html', engine());
 app.set('view engine', 'html');
 app.set('views', path.resolve(__dirname, './views'));
 
 app.get('/', (req, res) => {
-  res.render('afawf', {
+  res.render('index', {
     hello: 'world',
     msg: 'hello world',
     a: 1,
