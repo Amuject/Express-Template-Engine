@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 문서 보여주기</title>
+  </head>
+  <body>
+    <h1>새로운 HTML 문서!</h1>
+    <p>새로운 HTML 문서를 작성하였습니다. 잘 표시돠었으면 좋겠네요.</p>
+    <p>변수에 할당된 메시지를 불러옵니다. hello #{hello}!</p>
+    <p>
+      변수에 할당된 메시지를 다른 방식으로 불러옵니다. hello
+      <eval>hello</eval>!
+    </p>
+    <repeat times="3">
+      <p>이 문장은 3번 반복됩니다!</p>
+    </repeat>
+    <repeat index="i" from="1" to="10">
+      <p>숫자 세기: #{i}</p>
+    </repeat>
+    <if condition="new Date().getSeconds() <= 20">
+      <p>지금은 0 - 20 초 사이입니다.</p>
+    </if>
+    <elif condition="new Date().getSeconds() <= 50">
+      <p>지금은 20 - 50 초 사이입니다.</p>
+    </elif>
+    <else>
+      <p>이번 분이 거의 끝나갑니다!</p>
+    </else>
+  </body>
+</html>

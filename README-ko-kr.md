@@ -1,25 +1,25 @@
 # Express Template Engine
 
-Super easy HTML-based template engine for [Express](https://expressjs.com/)
+**[Express](https://expressjs.com/)와 함께 사용할 수 있는 쉬운 HTML 태그 기반의 템플릿 엔진**
 
-## Installation
+## 설치
 
 `npm i @wnynya/express-template-engine`
 
-## Setup with express
+## 빠른 사용방법
 
 ```js
 import engine from '@wnynya/express-template-engine';
 
-// Setup express template engine
+// 템플릿 엔진 등록
 app.engine('html', engine({ caching: false }));
 app.set('view engine', 'html');
 
-// Set views file directory
-app.set('views', path.resolve(__dirname, './views'));
+// 템플릿 디렉토리 설정
+app.set('views', './views');
 
-// Use template engine
 app.get('/', (req, res) => {
+  // 템플릿 엔진 사용
   res.render('template', {});
 });
 ```

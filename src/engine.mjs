@@ -40,7 +40,9 @@ function parseRepeatTag(document, scope = {}) {
     }
     let innerHTML = '';
     for (let i = from; i <= to; i++) {
-      scope[index] = i;
+      if (index) {
+        scope[index] = i;
+      }
       const contentDOM = new JSDOM(content);
       const contentDocument = contentDOM.window.document;
       parseDocument(contentDocument, scope);

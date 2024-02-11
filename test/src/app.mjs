@@ -16,7 +16,8 @@ app.set('view engine', 'html');
 app.set('views', path.resolve(__dirname, './views'));
 
 app.get('/', (req, res) => {
-  res.render('index', {
+  res.render('afawf', {
+    hello: 'world',
     msg: 'hello world',
     a: 1,
     b: () => {
