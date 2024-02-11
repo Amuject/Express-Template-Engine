@@ -1,43 +1,54 @@
 # Express Template Engine
 
-Super easy HTML-based template engine for [Express](https://expressjs.com/)
+**Easy HTML-based template engine for [Express](https://expressjs.com/)**
+
+You can see tutorial here.
+
+- [[English] Express Template Engine Tutorial](https://github.com/wnynya/node-Express-Template-Engine/blob/main/TUTORIAL-en.md)
+
+- [[한국어] 쉬운 Express 템플릿 엔진 사용자 설명서](https://github.com/wnynya/node-Express-Template-Engine/blob/main/TUTORIAL-ko.md)
 
 ## Installation
 
-`npm i @wnynya/express-template-engine`
+```
+npm i express-template-engine
+```
 
-## Setup with express
+## Setup with Express
 
 ```js
-import engine from '@wnynya/express-template-engine';
+import engine from 'express-template-engine'; // ESM, Typescript
+const engine = require('express-template-engine'); // CJS
 
-// Setup express template engine
+// Set express template engine
 app.engine('html', engine({ caching: false }));
 app.set('view engine', 'html');
 
-// Set views file directory
+// Set views directory
 app.set('views', path.resolve(__dirname, './views'));
 
 // Use template engine
 app.get('/', (req, res) => {
-  res.render('template', {});
+  res.render('template', { ... });
 });
 ```
 
-## Variable Injection
-
-```html
-<span>#{val}</span>
-```
+# Function Tags
 
 ## `<eval>` Tag
 
 ```html
-<eval>variable</eval>
+<eval>val</eval>
 ```
 
 ```html
 <eval>javascript.code({});</eval>
+```
+
+### Variable Injection (Same as `<eval>` Tag)
+
+```html
+<span>#{val}</span>
 ```
 
 ## `<repeat>` Tag

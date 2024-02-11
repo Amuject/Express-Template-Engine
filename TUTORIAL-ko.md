@@ -1,6 +1,6 @@
-# Express Template Engine 쉬운 사용자 설명서
+# 쉬운 Express 템플릿 엔진 사용자 설명서
 
-이 쉬운 사용자 설명서는 Node.js 와 Express 모듈, 그리고 Express Template Engine을 사용해 웹 서버를 만들어 보고 템플릿 엔진의 기능을 사용해 볼 수 있도록 작성되었습니다.
+이 쉬운 사용자 설명서는 Node.js 와 Express 모듈, 그리고 Express 템플릿 엔진을 사용해 웹 서버를 만들어 보고 이 템플릿 엔진의 기능을 사용해 볼 수 있도록 작성되었습니다.
 
 ## 목차
 
