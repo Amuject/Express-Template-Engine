@@ -1,0 +1,20 @@
+{
+  "name": "@wnynya/express-template-engine",
+  "version": "0.0.1",
+  "description": "HTML template engine for express",
+  "author": "Wany <sung@wany.io> (https://wany.io)",
+  "main": "src/index.mjs",
+  "keywords": [
+    "html",
+    "template",
+    "express"
+  ],
+  "homepage": "https://github.com/wnynya/node-Express-Template-Engine",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wnynya/node-Express-Template-Engine.git"
+  },
+  "dependencies": {
+    "jsdom": "^24.0.0"
+  }
+}
