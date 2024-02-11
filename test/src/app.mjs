@@ -9,7 +9,7 @@ import express from 'express';
 
 const app = express();
 
-import engine from '../../src/index.mjs';
+import engine from '../../src/index.ts/index.js';
 
 app.engine('html', engine());
 app.set('view engine', 'html');

@@ -1,7 +1,7 @@
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { JSDOM } from 'jsdom';
 
@@ -71,7 +71,7 @@ function parseInjection(document, scope = {}) {
   }
 }
 
-function parseImportTag(document, scope = {}) {
+function parseImportTag(document, scope: any = {}) {
   let elements = document.querySelectorAll('import');
   for (const element of elements) {
     const importFile = path.resolve(

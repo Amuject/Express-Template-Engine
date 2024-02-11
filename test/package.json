@@ -1,20 +1,13 @@
 {
-  "name": "test",
+  "name": "@wnynya/express-template-engine-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/app.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:esm": "node test.mjs",
+    "test:cjs": "node test.cjs"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "./src/**/*"
-    ],
-    "ext": "js,mjs,json,html"
+    "express": "^4.18.2",
+    "express-template-engine": "file:.."
   }
 }

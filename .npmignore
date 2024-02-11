@@ -1,0 +1,6 @@
+!/dist*
+tsconfig*.json
+babel.config.js
+/test
+/scripts
+/deprecated

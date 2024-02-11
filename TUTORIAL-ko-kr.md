@@ -147,7 +147,7 @@ app.listen(3000, () => {
 
 Express 템플릿 엔진을 설치하기 전에 웹 서버를 종료합니다.
 
-터미널 창에서 `npm i @wnynya/express-template-engine` 명령어를 사용하여 템플릿 엔진 모듈을 설치합니다.
+터미널 창에서 `npm i express-template-engine` 명령어를 사용하여 템플릿 엔진 모듈을 설치합니다.
 
 # Express 템플릿 엔진 사용하기
 
