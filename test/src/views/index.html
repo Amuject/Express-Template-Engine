@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template Engine Test</title>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>#{msg}</h1>
+
+    <fieldset>
+      <legend><h3>Import temp</h3></legend>
+      <import src="temp"></import>
+    </fieldset>
+
+    <fieldset>
+      <legend>import repeat</legend>
+      <repeat index="i" from="50" to="55">
+        <import src="temp2"></import>
+      </repeat>
+    </fieldset>
+
+    <if condition="new Date().getSeconds() % 2 == 0">
+      <p>seconds is odd</p>
+    </if>
+    <else>
+      <p>seconds is not odd</p>
+    </else>
+
+    <p>run function: <eval>b();</eval></p>
+  </body>
+</html>
