@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
     b: () => {
       return 'func';
     },
+    array: ['aaa', 'bbb', 'ccc'],
   });
 });
 

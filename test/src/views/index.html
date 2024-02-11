@@ -30,13 +30,27 @@
       </repeat>
     </fieldset>
 
-    <if condition="new Date().getSeconds() % 2 == 0">
-      <p>seconds is odd</p>
-    </if>
-    <else>
-      <p>seconds is not odd</p>
-    </else>
+    <p>
+      #{new Date().getSeconds()} is
+      <if condition="new Date().getSeconds() % 2 == 0">
+        <span>odd</span>
+      </if>
+      <else>
+        <span>not odd</span>
+      </else>
+    </p>
 
     <p>run function: <eval>b();</eval></p>
+
+    <pre id="msg"></pre>
+
+    <repeat index="i" times="3">
+      <pre><eval>i</eval>: #{array[i]}</pre>
+    </repeat>
+
+    <script>
+      let test = '#{msg}';
+      document.querySelector('#msg').innerHTML = test;
+    </script>
   </body>
 </html>

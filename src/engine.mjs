@@ -18,7 +18,7 @@ function getTemplate(filePath) {
 }
 
 function scopeEval(code, scope = {}) {
-  return new Function(`with (this) { return (${code}); }`).call(scope);
+  return new Function(`with (this) { return ${code} }`).call(scope);
 }
 
 function nodesFromString(string) {
