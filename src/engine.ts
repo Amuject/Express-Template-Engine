@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { JSDOM } from 'jsdom';
+import { parse, HTMLElement } from 'node-html-parser';
 
 interface TemplateEngineOptions {
   caching: false | boolean;
@@ -37,10 +37,10 @@ class TemplateEngine {
   }
 
   nodes(string: string) {
-    return new JSDOM(string).window.document.childNodes;
+    return parse(string).childNodes;
   }
 
-  processRepeatTag(document: Document, scope: any = {}) {
+  processRepeatTag(document: HTMLElement, scope: any = {}) {
     let elements = document.querySelectorAll('repeat');
 
     for (const element of elements) {
@@ -59,16 +59,15 @@ class TemplateEngine {
         if (indexKey) {
           scope[indexKey] = i;
         }
-        const contentDOM = new JSDOM(content);
-        const contentDocument = contentDOM.window.document;
+        const contentDocument = parse(content);
         this.processDocument(contentDocument, scope);
-        repeatedContent += contentDOM.serialize();
+        repeatedContent += contentDocument.toString();
       }
       element.innerHTML = repeatedContent;
     }
   }
 
-  processEvelTag(document: Document, scope: any = {}) {
+  processEvelTag(document: HTMLElement, scope: any = {}) {
     const elements = document.querySelectorAll('eval');
 
     for (const element of elements) {
@@ -79,9 +78,9 @@ class TemplateEngine {
     }
   }
 
-  processInjection(document: Document, scope: any = {}) {
+  processInjection(document: HTMLElement, scope: any = {}) {
     for (const childNode of document.childNodes) {
-      const element = <Element>childNode;
+      const element = <HTMLElement>childNode;
       let content = element.innerHTML;
       if (!content) {
         continue;
@@ -99,7 +98,7 @@ class TemplateEngine {
     }
   }
 
-  processIfTag(document: Document, scope = {}) {
+  processIfTag(document: HTMLElement, scope = {}) {
     const elements = document.querySelectorAll('if');
 
     for (const element of elements) {
@@ -139,7 +138,7 @@ class TemplateEngine {
     }
   }
 
-  processImportTag(document: Document, scope: any = {}) {
+  processImportTag(document: HTMLElement, scope: any = {}) {
     let elements = document.querySelectorAll('import');
 
     for (const element of elements) {
@@ -147,8 +146,7 @@ class TemplateEngine {
         scope.settings.views,
         element.getAttribute('src')
       );
-      const importDOM = new JSDOM(this.template(importFile));
-      const importDocument = importDOM.window.document;
+      const importDocument = parse(this.template(importFile));
 
       this.processDocument(importDocument, scope);
 
@@ -156,7 +154,7 @@ class TemplateEngine {
     }
   }
 
-  processDocument(document: Document, scope = {}) {
+  processDocument(document: HTMLElement, scope = {}) {
     this.processRepeatTag(document, scope);
     this.processEvelTag(document, scope);
     this.processInjection(document, scope);
@@ -167,10 +165,9 @@ class TemplateEngine {
   render(file, scope = {}) {
     let html = this.template(file);
 
-    const DOM = new JSDOM(html);
-    const document = DOM.window.document;
+    const document = parse(html);
     this.processDocument(document, scope);
-    html = DOM.serialize();
+    html = document.toString();
 
     return html;
   }

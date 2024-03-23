@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
       return 'func';
     },
     array: ['aaa', 'bbb', 'ccc'],
+    head: 'head.html',
   });
 });
 
