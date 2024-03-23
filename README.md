@@ -4,9 +4,7 @@
 
 You can see tutorial here.
 
-- [[English] Express Template Engine Tutorial](https://github.com/wnynya/Express-Template-Engine/blob/main/TUTORIAL-en.md)
-
-- [[한국어] 쉬운 Express 템플릿 엔진 사용자 설명서](https://github.com/wnynya/Express-Template-Engine/blob/main/TUTORIAL-ko.md)
+- [[한국어] 쉬운 Express 템플릿 엔진 사용자 설명서](https://github.com/Amuject/Express-Template-Engine/blob/main/TUTORIAL-ko.md)
 
 ## Installation
 
