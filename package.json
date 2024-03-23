@@ -1,6 +1,6 @@
 {
   "name": "express-template-engine",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Easy HTML-based template engine for Express",
   "author": "Wany <sung@wany.io> (https://wany.io)",
   "type": "module",
@@ -18,10 +18,10 @@
     "express",
     "template-engine"
   ],
-  "homepage": "https://github.com/wnynya/Express-Template-Engine",
+  "homepage": "https://github.com/Amuject/Express-Template-Engine",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wnynya/Express-Template-Engine.git"
+    "url": "https://github.com/Amuject/Express-Template-Engine.git"
   },
   "scripts": {
     "build": "npm run build:clean && npm run build:esm && npm run build:cjs && npm run build:package",
